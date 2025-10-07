@@ -1,10 +1,13 @@
 :root {
-  --blue-strong: #004281;
-  --blue-soft: #085895;
-  --blue-light: #0077A6;
-  --blue-mid: #006994;
-  --blue-deep: #003754;
-  --blue-darkest: #00223D;
+  :root {
+  --blue-strong:   #0E8991;  /* replaced with --sea, strong accent */
+  --blue-soft:     #8DB6BC;  /* replaced with --midsea, soft accent */
+  --blue-light:    #EAA27C;  /* replaced with --sand, light accent */
+  --blue-mid:      #E8BBA6;  /* replaced with --midsand, mid accent */
+  --blue-deep:     #0C313A;  /* replaced with --deepsea, deep background */
+  --blue-darkest:  #0C313A;  
+  --font-main:     "Times New Roman", Times, serif;
+  }
 
   --font-main: "Noto Sans", sans-serif;
 }
@@ -64,7 +67,7 @@ nav li a:hover {
 }
 
 .section {
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
 }
 .section h2 {
   font-size: 2rem;
@@ -113,6 +116,6 @@ footer {
   }
 
   .section {
-    padding: 4rem 2rem;
+    padding: 4rem 3rem;
   }
 }
