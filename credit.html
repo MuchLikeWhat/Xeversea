@@ -27,9 +27,20 @@
   grid-template-columns: 1fr 1fr;
   border-left: 3px solid var(--blue-deep);
   border-right: 3px solid var(--blue-deep);
-  width: max-content;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   background: var(--blue-soft);
+  box-sizing: border-box;
 }
+ @media (max-width: 600px) {
+  .credit-2col {
+    grid-template-columns: 1fr;
+    border-left: none;
+    border-right: none;
+    max-width: 100%;
+  }
+ }
 .credit-2col > div {
   border-bottom: 1px solid var(--blue-mid);
   border-right: 1px solid var(--blue-deep);
@@ -50,11 +61,11 @@
 </style>
 <div class="credit-2col">
   <div>Web Hoster</div>
-  <div><a href="github.com">github.com</a></div>
+  <div><a href="https://github.com">github.com</a></div>
   <div>Subdomain Provider</div>
-  <div><a href="noip.com">noip.com</a></div>
+  <div><a href="https://noip.com">noip.com</a></div>
   <div>Main Coder</div>
-  <div><a href="https://github.com/MuchLikeWhat">Jiho</div>
+  <div><a href="https://github.com/MuchLikeWhat">Jiho</a></div>
   <div>Writer</div>
   <div>Sherenity</div>
   <div>Image Illustrator</div>
@@ -64,18 +75,18 @@
 <footer>
         <h2>Socials</h2>
             <ul>
-            <li>Akun Instagram kita adalah @x_eversea.</li>
-               <ul>
+            <li>Akun Instagram kita adalah @x_eversea.
+                <ul>
                  <li><a href="https://www.instagram.com/x_eversea?igsh=dHZ2aTZ5d2ZkOWRx">Menuju akun Instagram</a></li>
                </ul>
-            <li>Alamat Gmail kita adalah x.eversea@gmail.com.</li
+            <li>Alamat Gmail kita adalah x.eversea@gmail.com.
                 <ul>
                  <li><a href="mailto:x.eversea@gmail.com">Mengirim email ke kita</a></li>
                 </ul>
-            <li>Server Discord kita.</li>
+            <li>Server Discord kita.
               <ul>
-            <li><a href="https://discord.gg/tuSdVGbMJX">Menuju ke Server kita</a></li>
-            </ul>
+              <li><a href="https://discord.gg/tuSdVGbMJX">Menuju ke Server kita</a></li>
+              </ul>
             </ul>
 </footer>
 </body>
