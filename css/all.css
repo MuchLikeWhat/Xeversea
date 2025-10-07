@@ -38,27 +38,21 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
 }
-
-nav h1 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav li a {
+  
+nav a {
   color: white;
   font-weight: 500;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  gap: 1.5rem
 }
-nav li a:hover {
+nav a:hover {
   color: var(--blue-light);
 }
 
