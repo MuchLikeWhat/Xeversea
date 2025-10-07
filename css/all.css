@@ -1,4 +1,3 @@
-:root {
   :root {
   --blue-strong:   #0E8991;  /* replaced with --sea, strong accent */
   --blue-soft:     #8DB6BC;  /* replaced with --midsea, soft accent */
@@ -7,9 +6,6 @@
   --blue-deep:     #0C313A;  /* replaced with --deepsea, deep background */
   --blue-darkest:  #0C313A;  
   --font-main:     "Times New Roman", Times, serif;
-  }
-
-  --font-main: "Noto Sans", sans-serif;
 }
 
 * {
