@@ -36,8 +36,10 @@ nav {
   color: white;
   padding: 1rem 2rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -46,11 +48,9 @@ nav {
 nav a {
   color: white;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-decoration: none;
-  transition: color 0.2s;
-  display: flex;
-  gap: 1.5rem
+  transition: color 0.5s;
 }
 nav a:hover {
   color: var(--blue-light);
