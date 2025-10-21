@@ -1,93 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0", user-scalable=no>
-    <link rel="icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
-    <title>Xeversea's Credit Section</title>
-    <link rel="stylesheet" href="css/all.css">
-  <!-- <script src="js/all.js" defer></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Credits and contact links for Xeversea - contributors, hosts, and socials.">
+  <link rel="icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
+  <title>Xeversea — Credits</title>
+  <link rel="stylesheet" href="css/all.css">
+  <style>
+    :root{
+      --blue-deep:#0b3d91;
+      --blue-mid:#5b8bd6;
+      --blue-soft:#eaf3ff;
+      --blue-light:#f4f9ff;
+      --blue-darkest:#022652;
+      --font-main: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    /* Basic reset for this page only */
+    html,body{height:100%;margin:0;font-family:var(--font-main);color:var(--blue-darkest);background:linear-gradient(180deg,var(--blue-soft),#fff);}
+    a{color:var(--blue-deep);}
+    header{background:var(--blue-deep);color:white;padding:0.75rem 1rem;}
+    .container{max-width:980px;margin:0 auto;padding:1rem;}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;padding:0.5rem;background:#fff;color:var(--blue-deep);border-radius:4px}
+    nav ul{display:flex;gap:1rem;list-style:none;padding:0;margin:0;align-items:center}
+    nav a{color:inherit;text-decoration:none;padding:0.25rem 0.5rem;border-radius:4px}
+    nav a:hover,nav a:focus{background:rgba(255,255,255,0.08)}
+    main{padding:1.25rem 0}
+    .credits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;align-items:start}
+    .card{background:var(--blue-light);border:3px solid var(--blue-deep);padding:1rem;border-radius:8px;box-sizing:border-box}
+    .card h2{margin:0 0 0.5rem 0;font-size:1.1rem}
+    .credit-list{display:grid;grid-template-columns:1fr 1fr;gap:0.25rem 0.5rem;align-items:center}
+    .credit-list dt{font-weight:700}
+    .credit-list dd{margin:0}
+    .note{font-size:0.9rem;color:var(--blue-mid);margin-top:0.5rem}
+    footer{border-top:1px solid var(--blue-mid);padding:1rem 0;margin-top:1rem;background:transparent}
+    footer h3{margin:0 0 0.5rem 0}
+    @media (max-width:600px){
+      nav ul{flex-wrap:wrap}
+      .credit-list{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
- <header>
-        <nav id="nav">
-            <div id="nav">
-                <a href="index">Home</a>
-                <a href="project">Projects</a>
-                <a href="member">Members</a>
-                <a href="term">Terms</a>
-                <a href="credit">Credits</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-   <style>
-.credit-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-left: 3px solid var(--blue-deep);
-  border-right: 3px solid var(--blue-deep);
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  background: var(--blue-soft);
-  box-sizing: border-box;
-}
- @media (max-width: 600px) {
-  .credit-2col {
-    grid-template-columns: 1fr;
-    border-left: none;
-    border-right: none;
-    max-width: 100%;
-  }
- }
-.credit-2col > div {
-  border-bottom: 1px solid var(--blue-mid);
-  border-right: 1px solid var(--blue-deep);
-  margin: 0; padding: 0;
-  color: var(--blue-darkest);
-  font-family: var(--font-main);
-  font-size: 1em;
-  min-width: 120px;
-  background: var(--blue-light);
-}
-.credit-2col > div:nth-child(2n) {
-  border-right: none;
-}
-.credit-2col > div:last-child,
-.credit-2col > div:nth-last-child(2) {
-  border-bottom: none;
-}
-</style>
-<div class="credit-2col">
-  <div>Web Hoster</div>
-  <div><a href="https://github.com">github.com</a></div>
-  <div>Subdomain Provider</div>
-  <div><a href="https://noip.com">noip.com</a></div>
-  <div>Main Coder</div>
-  <div><a href="https://github.com/MuchLikeWhat">Jiho</a></div>
-  <div>Writer</div>
-  <div>Sherenity</div>
-  <div>Image Illustrator</div>
-  <div>Felly</div>
-</div>        
-    </main>
-<footer>
-        <h2>Socials</h2>
-            <ul>
-            <li>Akun Instagram kita adalah @x_eversea.
-                <ul>
-                 <li><a href="https://www.instagram.com/x_eversea?igsh=dHZ2aTZ5d2ZkOWRx">Menuju akun Instagram</a></li>
-               </ul>
-            <li>Alamat Gmail kita adalah x.eversea@gmail.com.
-                <ul>
-                 <li><a href="mailto:x.eversea@gmail.com">Mengirim email ke kita</a></li>
-                </ul>
-            <li>Server Discord kita.
-              <ul>
-              <li><a href="https://discord.gg/tuSdVGbMJX">Menuju ke Server kita</a></li>
-              </ul>
-            </ul>
-</footer>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <div class="container" role="banner">
+      <nav aria-label="Primary" role="navigation">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="project">Projects</a></li>
+          <li><a href="member">Members</a></li>
+          <li><a href="term">Terms</a></li>
+          <li><a href="credit" aria-current="page">Credits</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container" role="main">
+    <h1>Credits</h1>
+    <p class="note">Thank you to everyone and the services that make Xeversea possible. Links open in a new tab where appropriate.</p>
+
+    <section class="credits" aria-labelledby="credits-heading">
+      <div class="card" id="credits-heading">
+        <h2>Infrastructure & Services</h2>
+        <dl class="credit-list">
+          <dt>Web host</dt>
+          <dd><a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a></dd>
+
+          <dt>Subdomain provider</dt>
+          <dd><a href="https://noip.com" target="_blank" rel="noopener noreferrer">noip.com</a></dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h2>People</h2>
+        <dl class="credit-list">
+          <dt>Main coder</dt>
+          <dd><a href="https://github.com/MuchLikeWhat" target="_blank" rel="noopener noreferrer">Jiho (MuchLikeWhat)</a></dd>
+
+          <dt>Writer</dt>
+          <dd>Sherenity</dd>
+
+          <dt>Image illustrator</dt>
+          <dd>Felly</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h2>Contact & Social</h2>
+        <dl class="credit-list">
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/x_eversea?igsh=dHZ2aTZ5d2ZkOWRx" target="_blank" rel="noopener noreferrer">@x_eversea</a></dd>
+
+          <dt>Email</dt>
+          <dd><a href="mailto:x.eversea@gmail.com">x.eversea@gmail.com</a></dd>
+
+          <dt>Discord</dt>
+          <dd><a href="https://discord.gg/tuSdVGbMJX" target="_blank" rel="noopener noreferrer">Join our Discord</a></dd>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+  <footer class="container" role="contentinfo">
+    <p style="margin:0;font-size:0.9rem;color:var(--blue-mid);">© Xeversea — Created and maintained by the community. Follow us on social media for updates.</p>
+  </footer>
 </body>
 </html>
