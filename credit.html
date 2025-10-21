@@ -18,7 +18,7 @@
     }
     /* Basic reset for this page only */
     html,body{height:100%;margin:0;font-family:var(--font-main);color:var(--blue-darkest);background:linear-gradient(180deg,var(--blue-soft),#fff);}
-    a{color:var(--blue-deep);}
+    .credit-list a{color:var(--blue-deep);}
     header{background:var(--blue-deep);color:white;padding:0.75rem 1rem;}
     .container{max-width:980px;margin:0 auto;padding:1rem;}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
@@ -28,8 +28,8 @@
     nav a:hover,nav a:focus{background:rgba(255,255,255,0.08)}
     main{padding:1.25rem 0}
     .credits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;align-items:start}
-    .card{background:var(--blue-light);border:3px solid var(--blue-deep);padding:1rem;border-radius:8px;box-sizing:border-box}
-    .card h2{margin:0 0 0.5rem 0;font-size:1.1rem}
+ /*   .card{background:var(--blue-light);border:3px solid var(--blue-deep);padding:1rem;border-radius:8px;box-sizing:border-box} 
+    .card h2{margin:0 0 0.5rem 0;font-size:1.1rem} */
     .credit-list{display:grid;grid-template-columns:1fr 1fr;gap:0.25rem 0.5rem;align-items:center}
     .credit-list dt{font-weight:700}
     .credit-list dd{margin:0}
@@ -86,10 +86,8 @@
           <dd>Felly</dd>
         </dl>
       </div>
-
-      <div class="card">
+<footer class="container" role="contentinfo">
         <h2>Contact & Social</h2>
-        <dl class="credit-list">
           <dt>Instagram</dt>
           <dd><a href="https://www.instagram.com/x_eversea?igsh=dHZ2aTZ5d2ZkOWRx" target="_blank" rel="noopener noreferrer">@x_eversea</a></dd>
 
@@ -98,15 +96,12 @@
 
           <dt>Discord</dt>
           <dd><a href="https://discord.gg/tuSdVGbMJX" target="_blank" rel="noopener noreferrer">Join our Discord</a></dd>
-         
-          <dt>© 2025 Xeversea — Grade 10 Showcase. Created by <a href="https://github.com/MuchLikeWhat" target="_blank" rel="noopener noreferrer">Jiho</a>, Maitreyawira Palembang School.</dt>
+          <dt style="margin:0;font-size:0.9rem;">© 2025 Xeversea — Grade 10 showcase. Created by <a href="https://github.com/MuchLikeWhat">Jiho</a>, Maitreyawira Palembang School. Follow us on social media for updates.</dt>
         </dl>
       </div>
     </section>
 
   </main>
-  <footer class="container" role="contentinfo">
-    <p style="margin:0;font-size:0.9rem;color:var(--blue-mid);">© Xeversea — Created and maintained by the community. Follow us on social media for updates.</p>
-  </footer>
+      </footer>
 </body>
 </html>
