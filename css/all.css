@@ -1,5 +1,10 @@
 /* Basic Theme */
 :root {
+  --sand: #EAA27C;
+  --sandtrans: #E8BBA6;
+  --sealight: #8db6bc;
+  --seammid: #0e8991;
+  --seadark: #0c313a;
   --blue-deep: #02347a;
   --blue-soft: #e9f1ff;
   --blue-darkest: #001d44;
@@ -79,7 +84,7 @@ nav a[aria-current="page"] {
 
 /* Footer */
 footer {
-  background-color: var(--blue-deep);
+  background-color: var(--seadark);
   color: white;
   text-align: center;
   padding: 2rem 1rem;
@@ -88,12 +93,15 @@ footer {
 }
 
 footer a {
-  color: white;
+  color: var(--sand);
+  transistion: 0.5s;
   text-decoration: none;
 }
 
 footer a:hover {
+  color: var(--sandtrans)
   text-decoration: underline;
+  
 }
 
 footer dl {
