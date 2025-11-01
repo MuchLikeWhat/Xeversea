@@ -17,7 +17,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+  padding-left: clamp(15px, 5vw, 40px);
+  padding-right: clamp(15px, 5vw, 40px);
+  box-sizing: border-box;
+  }
 
 main {
   flex: 1;
