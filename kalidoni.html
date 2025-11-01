@@ -7,17 +7,13 @@
 <link rel="stylesheet" href="all.css">
 <style>
 
-  main {
+  .page-content {
     max-width: 900px;
     margin: 40px auto;
     padding: 25px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  h1, h2, h3 {
-    color: #222;
   }
 
   /* Wikipedia-style infobox */
@@ -57,16 +53,12 @@
   }
 
   @media (max-width: 768px) {
-    body {
-      padding-left: 18px;
-      padding-right: 18px;
-    }
     .infobox {
       float: none;
       margin: 0 auto 15px;
       width: 90%;
     }
-    main {
+    .page-content {
       margin: 20px auto;
       padding: 20px;
     }
@@ -89,6 +81,7 @@
     </nav>
   </header>
   <main>
+    <div class="page-content">
     <h1>Homo Daffinicus .sp</h1>
     <p><i>"Out of Kalidoni Theory</i></p>
     <div class="infobox">
@@ -179,6 +172,7 @@
     <blockquote>
       Teori <i>Out of Kalidoni</i> bukan teori ilmiah resmi.  
     </blockquote>
+    </div>
   </main>
 
   <footer>
