@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Xeversea | Code Redemption </title>
+    <link rel="stylesheet" href="css/redeem.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <header>
+    <nav aria-label="Main navigation">
+      <div class="container">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="project">Projects</a></li>
+          <li><a href="member">Members</a></li>
+          <li><a href="term">Terms</a></li>
+          <li><a href="credit">Credits</a></li>
+          <li><a href="redeem" aria-current="page">Redeem</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div id="overlay" style="display:none;"></div>
+    <div id="container">
+        <h2>Redeem a Code</h2>
+        <form id="codeForm">
+            <label for="code">Enter The Code:</label>
+            <input type="text" id="code" name="code" required>
+            <button type="submit">Redeem</button>
+        </form>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <h2>Contact & Social</h2>
+      <dl>
+        <dt>Instagram</dt>
+        <dd><a href="https://www.instagram.com/x_eversea?igsh=dHZ2aTZ5d2ZkOWRx" target="_blank" rel="noopener">@x_eversea</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:x.eversea@gmail.com">x.eversea@gmail.com</a></dd>
+        <dt>Discord</dt>
+        <dd><a href="https://discord.gg/tuSdVGbMJX" target="_blank" rel="noopener">Join our Discord</a></dd>
+      </dl>
+      <p>© 2025 Xeversea — Grade 10 showcase. Created by 
+        <a href="https://github.com/MuchLikeWhat">Jiho</a>, Maitreyawira Palembang School.
+      </p>
+    </div>
+  </footer>
+    <div id="rickroll" style="display: none;">
+        <video id="rickrollVideo" src="assets/videos/rickroll.mp4" loop playsinline></video>
+    </div>
+    <div id="invalid">
+        <button id="close" onclick="closeErrorPopUp()">X</button>
+        <h3>Error!</h3>
+        <p>The code that you entered is either invalid or expired, please try again!</p>
+    </div>
+    <div id="recaptcha">
+        <div class="g-recaptcha" data-callback="onCaptchaSucess" data-sitekey="6LcZ3sopAAAAAC7oBE1ZZVrcg-Rtk42VeVI2zwRv"></div>
+    </div>
+    <script src="js/redeem.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function closeErrorPopUp() {
+            document.getElementById('invalid').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
