@@ -115,3 +115,10 @@ footer dt {
 footer dd {
   margin: 0 0 6px 0;
 }
+
+blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 12px;
+    color: #444;
+    margin: 15px 0;
+  }
