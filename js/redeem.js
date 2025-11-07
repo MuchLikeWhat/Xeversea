@@ -1,12 +1,12 @@
-let pendingcode = null;
+let pendingCode = null;
 
 document.getElementById('codeForm').addEventListener('submit', (event) => {
     event.preventDefault();
     const code = document.getElementById('code').value.toLowerCase();
 
     const secureCodes = ['outofkalidoni','futurecode'];
-    if (securecCodes.includes(code)) {
-        pendingcode = code;
+    if (secureCodes.includes(code)) {
+        pendingCode = code;
   document.getElementById('recaptcha').style.display = 'block';
   document.getElementById('overlay').style.display = 'block';
       return;
@@ -52,13 +52,13 @@ document.getElementById('codeForm').addEventListener('submit', (event) => {
 
 });
 
-function onCaptchaSucess() {
-  if (!pendingcode) return;
-  switch (pendingcode) {
+function onCaptchaSuccess() {
+  if (!pendingCode) return;
+  switch (pendingCode) {
     case 'outofkalidoni':
       window.location.replace('https://xeversea.sytes.net/kalidoni');
       break;
-      pendingcode=null;
+      pendingCode=null;
 
 document.getElementById('recaptcha').style.display = 'none';
 document.getElementById('overlay').style.display = 'none';
