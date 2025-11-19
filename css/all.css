@@ -94,12 +94,12 @@ footer {
 
 footer a {
   color: var(--sand);
-  transistion: 0.5s;
+  transition: 0.5s;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: var(--sandtrans)
+  color: var(--sandtrans);
   text-decoration: underline;
   
 }
