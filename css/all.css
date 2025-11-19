@@ -36,14 +36,26 @@ header {
 }
 
 nav ul {
-  display: flex;
+  float: left;
+  padding: 20px;
+  font-size: 18px;
+  width: 16.67%;
+  /*display: flex;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   padding: 20px 0;
   margin: 0;
-  gap: 10px 24px;
+  gap: 10px 24px;*/
 }
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 
 nav a {
   color: #fff;
@@ -122,3 +134,4 @@ blockquote {
     color: #444;
     margin: 15px 0;
   }
+}

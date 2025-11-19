@@ -5,6 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, useer-scalable=no">
   <title>Xeversea | Credits</title>
   <link rel="stylesheet" href="css/all.css">
+  <style>
+    /* Layout for the credits section: stacked on small screens, two columns on wider screens */
+    .credits {
+      display: grid;
+      gap: 1.5rem;
+      padding: 2rem 0;
+    }
+
+    @media (min-width: 700px) {
+      .credits {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+      }
+    }
+
+    /* Table base styles */
+    .credits-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .credits-table caption {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      background: #f7f7f7;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 1.05rem;
+    }
+
+    .credits-table thead {
+      display: none; /* not needed for these simple key/value tables */
+    }
+
+    .credits-table tbody tr {
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .credits-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .credits-table th,
+    .credits-table td {
+      padding: 0.85rem 1rem;
+      vertical-align: top;
+    }
+
+    .credits-table th {
+      width: 40%;
+      text-align: left;
+      font-weight: 600;
+      background: #fafafa;
+      color: #111;
+    }
+
+    .credits-table td a {
+      color: #0a66c2;
+      text-decoration: none;
+    }
+
+    .credits-table td a:hover,
+    .credits-table td a:focus {
+      text-decoration: underline;
+    }
+
+    /* Small utility to visually match previous "card" spacing */
+    .card-wrapper {
+      padding: 0.25rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,34 +98,46 @@
     </nav>
   </header>
   <main>
-     <section class="credits">
-    <div class="card">
-        <h2>Infrastructure & Services</h2>
-        <dl>
-          <dt>Web host</dt>
-          <dd><a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a></dd>
+    <section class="credits container" aria-labelledby="credits-heading">
+      <h2 id="credits-heading" class="sr-only">Credits</h2>
 
-          <dt>Subdomain provider</dt>
-          <dd><a href="https://noip.com" target="_blank" rel="noopener noreferrer">noip.com</a></dd>
-        </dl>
+      <div class="card-wrapper" role="region" aria-labelledby="infra-caption">
+        <table class="credits-table" aria-describedby="infra-caption">
+          <caption id="infra-caption">Infrastructure &amp; Services</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Web host</th>
+              <td><a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Subdomain provider</th>
+              <td><a href="https://noip.com" target="_blank" rel="noopener noreferrer">noip.com</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="card">
-        <h2>People</h2>
-        <dl>
-          <dt>Main coder</dt>
-          <dd><a href="https://github.com/MuchLikeWhat" target="_blank" rel="noopener noreferrer">Jiho (MuchLikeWhat)</a></dd>
-
-          <dt>Writer</dt>
-          <dd>Sherenity</dd>
-
-          <dt>Image illustrator</dt>
-          <dd>Felly</dd>
-        </dl>
+      <div class="card-wrapper" role="region" aria-labelledby="people-caption">
+        <table class="credits-table" aria-describedby="people-caption">
+          <caption id="people-caption">People</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Main coder</th>
+              <td><a href="https://github.com/MuchLikeWhat" target="_blank" rel="noopener noreferrer">Jiho (MuchLikeWhat)</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Writer</th>
+              <td><a href="https://www.instagram.com/_.sherenity?igsh=ZG41dW5zdXRzNTl3" target="_blank" rel="noopener noreferrer">Sherenity</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Image illustrator</th>
+              <td><a href="https://www.instagram.com/ffellysaa?igsh=MTNjNXZvNHQzangxaQ==" target="_blank" rel="noopener noreferrer">Felly</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container">
       <h2>Contact & Social</h2>
