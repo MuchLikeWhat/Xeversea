@@ -2,25 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, useer-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Xeversea | Credits</title>
   <link rel="stylesheet" href="css/all.css">
   <style>
-    /* Layout for the credits section: stacked on small screens, two columns on wider screens */
-    .credits {
-      display: grid;
-      gap: 1.5rem;
-      padding: 2rem 0;
-    }
-
-    @media (min-width: 700px) {
-      .credits {
-        grid-template-columns: repeat(2, 1fr);
-        align-items: start;
-      }
-    }
-
-    /* Table base styles */
     .credits-table {
       width: 100%;
       border-collapse: collapse;
@@ -75,11 +60,6 @@
     .credits-table td a:focus {
       text-decoration: underline;
     }
-
-    /* Small utility to visually match previous "card" spacing */
-    .card-wrapper {
-      padding: 0.25rem;
-    }
   </style>
 </head>
 <body>
@@ -92,14 +72,14 @@
           <li><a href="member">Members</a></li>
           <li><a href="term">Terms</a></li>
           <li><a href="credit" aria-current="page">Credits</a></li>
-          <li><a href="#">Redeem</a></li>
+          <li><a href="redeem">Redeem</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <main>
     <section class="credits container" aria-labelledby="credits-heading">
-      <h2 id="credits-heading" class="sr-only">Credits</h2>
+      <h2 id="credits-heading" class="sr-only" style="text-align: center;">Credits</h2>
 
       <div class="card-wrapper" role="region" aria-labelledby="infra-caption">
         <table class="credits-table" aria-describedby="infra-caption">
@@ -113,6 +93,10 @@
               <th scope="row">Subdomain provider</th>
               <td><a href="https://noip.com" target="_blank" rel="noopener noreferrer">noip.com</a></td>
             </tr>
+            <tr>
+              <th scope="row">Recaptcha feature provider</th>
+              <td><a href="https://cloud.google.com/security/products/recaptcha" target="_blank" rel="noopener noreferrer">cloud.google.com</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -123,7 +107,7 @@
           <tbody>
             <tr>
               <th scope="row">Main coder</th>
-              <td><a href="https://github.com/MuchLikeWhat" target="_blank" rel="noopener noreferrer">Jiho (MuchLikeWhat)</a></td>
+              <td><a href="https://github.com/MuchLikeWhat" target="_blank" rel="noopener noreferrer">Jiho</a></td>
             </tr>
             <tr>
               <th scope="row">Writer</th>

@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  }
+}
 
 main {
   flex: 1;
@@ -46,7 +46,7 @@ nav ul {
 }
 
 @media screen and (max-width: 500px) {
-  .navbar a {
+  nav a {
     float: none;
     display: block;
     width: 100%;
