@@ -52,6 +52,7 @@ nav ul {
     width: 100%;
     text-align: center;
   }
+}
 
 nav a {
   color: #fff;
@@ -130,4 +131,4 @@ blockquote {
     color: #444;
     margin: 15px 0;
   }
-}
+
