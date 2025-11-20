@@ -110,7 +110,6 @@ footer a {
 footer a:hover {
   color: var(--sandtrans);
   text-decoration: underline;
-  
 }
 
 footer dl {
@@ -126,9 +125,8 @@ footer dd {
 }
 
 blockquote {
-    border-left: 4px solid #ccc;
-    padding-left: 12px;
-    color: #444;
-    margin: 15px 0;
-  }
-
+  border-left: 4px solid #ccc;
+  padding-left: 12px;
+  color: #444;
+  margin: 15px 0;
+}
