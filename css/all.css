@@ -29,6 +29,10 @@ main {
   padding: 0 16px;
 }
 
+.content {
+  padding: 20px;
+}
+
 /* Navbar */
 header {
   background: var(--blue-deep);

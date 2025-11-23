@@ -1,0 +1,52 @@
+.toc {
+    border: 1px solid #0b3d91;
+    background: #f4f9ff;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 10px;
+    z-index: 20;
+}
+
+.toc-title {
+    font-weight: bold;
+    color: #0b3d91;
+    display: block;
+    cursor: pointer;
+}
+
+#toc-toggle {
+    display: none;
+}
+
+.toc-list {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.toc-list li {
+    margin-bottom: 6px;
+}
+.toc-list a {
+    text-decoration: none;
+    color: #022652;
+}
+.toc-list a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .toc-list {
+        display: none;
+    }
+    #toc-toggle:checked ~ .toc-list {
+        display: block;
+        margin-top: 10px;
+    }
+    .toc {
+        position: relative;
+    }
+}
+
