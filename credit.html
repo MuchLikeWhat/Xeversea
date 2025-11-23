@@ -6,6 +6,48 @@
   <title>Xeversea | Credits</title>
   <link rel="stylesheet" href="css/all.css">
   <style>
+    .credits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center the cards under the heading */
+  gap: 1.5rem; /* spacing between cards */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* card-wrapper is the direct child wrapper used in your HTML */
+.card-wrapper {
+  flex: 1 1 360px;  /* grow, shrink, base width 360px */
+  max-width: 420px; /* avoid overly wide cards on large screens */
+  box-sizing: border-box;
+  margin: 0;        /* spacing is handled by gap on the flex container */
+}
+
+/* ensure the heading (sr-only visually hidden or not) sits full width */
+.credits > h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+/* Responsive tweak: on small screens each card should be full width */
+@media (max-width: 700px) {
+  .card-wrapper {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Keep your existing visual card style if you want to use .card elsewhere */
+.card {
+  background: var(--blue-soft);
+  border: 2px solid var(--blue-deep);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
     .credits-table {
       width: 100%;
       border-collapse: collapse;
