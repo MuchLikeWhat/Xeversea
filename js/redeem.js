@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .then(data => {
             fetch('https://mqprtorkbjflarpbjdrr.supabase.co/functions/v1/log-ip', {
               method: 'POST',
-              headers: { 'Authorization': 'Bearer sb_publishable_mzn0G0K6Y1QGwi83TVweug_uETtafBU', apikey: 'sb_publishable_mzn0G0K6Y1QGwi83TVweug_uETtafBU', 'Content-Type': 'application/json' },
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ ip: data.ip })
             });
           });
