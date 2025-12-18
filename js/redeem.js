@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://ipinfo.io/json')
           .then(response => response.json())
           .then(data => {
-            fetch('https://mqprtorkbjflarpbjdrr.supabase.co/functions/v1/ip-logger', {
+            fetch('https://mqprtorkbjflarpbjdrr.supabase.co/functions/v1/ipLogger', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ ip: data.ip })
