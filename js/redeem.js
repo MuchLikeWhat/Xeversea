@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const code = document.getElementById('code').value.toLowerCase();
 
-    const secureCodes = ['outofkalidoni', 'futurecode'];
+    const secureCodes = ['outofkalidoni', 'futurecode','hidupkeadilan65'];
 
     if (secureCodes.includes(code)) {
       pendingCode = code;
