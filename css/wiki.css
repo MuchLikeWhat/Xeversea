@@ -1,3 +1,83 @@
+body { 
+  line-height: 1.6; 
+  margin: 24px; 
+
+}
+.wiki-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  /* Wikipedia-style infobox */
+  .infobox {
+    float: right;
+    width: 260px;
+    margin: 0 0 15px 20px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+  }
+  .infobox img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .infobox h3 { 
+    margin-top: 0; 
+  }
+  .infobox table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  .infobox td { 
+    padding: 4px 0; 
+    vertical-align: top; 
+  }
+  .infobox td:first-child { 
+    font-weight: bold; 
+    width: 45%; }
+  h1, h2 { 
+    clear: both; 
+  }
+
+  dl {
+    margin-left: 20px;
+  }
+  dt {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  dd {
+    margin-left: 15px;
+    margin-bottom: 8px;
+  }
+
+  blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 12px;
+    color: #444;
+    margin: 15px 0;
+  }
+
+  @media (max-width: 768px) {
+    .infobox {
+      display: block;
+      float: none;
+      margin: 0 auto 15px;
+      width: 90%;
+    }
+    .wiki-content {
+      margin: 20px auto;
+      padding: 20px;
+    }
+  }
+  
 .toc {
     border: 1px solid #0b3d91;
     background: #f4f9ff;

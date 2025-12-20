@@ -72,8 +72,8 @@ window.onCaptchaSuccess = function () {
       window.location.replace('https://xeversea.sytes.net/kalidoni');
       break;
 
-    case 'futurecode':
-      alert('🎉 Future code unlocked!');
+    case 'hidupkeadilan65':
+      window.location.replace('https://xeversea.sytes.net/pke.html');
       break;
 
     default:
