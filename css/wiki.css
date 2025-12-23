@@ -41,9 +41,6 @@ body {
   .infobox td:first-child { 
     font-weight: bold; 
     width: 45%; }
-  h1, h2 { 
-    clear: both; 
-  }
 
   dl {
     margin-left: 20px;
