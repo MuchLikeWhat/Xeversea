@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const code = document.getElementById('code').value.toLowerCase();
 
-    const secureCodes = ['outofkalidoni', 'futurecode','hidupkeadilan65'];
+    const secureCodes = ['outofkalidoni','hidupkeadilan65','yappology101'];
 
     if (secureCodes.includes(code)) {
       pendingCode = code;
@@ -74,6 +74,10 @@ window.onCaptchaSuccess = function () {
 
     case 'hidupkeadilan65':
       window.location.replace('https://xeversea.sytes.net/pke.html');
+      break;
+      
+    case 'yappology101':
+      window.location.replace('https://devensmp.us.to/archive');
       break;
 
     default:
