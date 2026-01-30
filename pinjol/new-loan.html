@@ -33,13 +33,31 @@
     </nav>
   </header>
 <main>
-            <div style="background-color: beige;">
+            <div class="loan-panel" style="background-color: beige; padding: 1rem;">
             <h1 style="text-align: center;">New Loan to ######</h1>
-            <form id="request">
-                <label for="amount">Enter loan amount</label>
-                <input type="number" id="amount" name="amount"minrequired>
+            <form id="request" novalidate>
+                <label for="amount">Enter loan amount (IDR)</label>
+                <input list="amount-suggestions" type="number" id="amount" name="amount" min="1000" max="100000" step="500" required inputmode="numeric" placeholder="e.g. 10000">
+                <datalist id="amount-suggestions">
+                  <option value="1000"><option value="5000"><option value="10000"><option value="25000"><option value="50000"><option value="100000">
+                </datalist>
+
+                <label for="term">Loan term</label>
+                <select id="term" name="term" required>
+                  <option value="">Select term</option>
+                  <option value="3">3 days</option>
+                  <option value="7">7 days</option>
+                  <option value="14">14 days</option>
+                </select>
+
                 <label for="reason">Reason for Loan</label>
-                <input type="text" id="reason" name="reason" required>             
+                <textarea id="reason" name="reason" required maxlength="200" placeholder="Short reason (max 200 chars)"></textarea>
+
+                <div class="fees">
+                  <p>Fee: <strong><span id="fee">-</span></strong> IDR</p>
+                  <p>Total to repay: <strong><span id="total">-</span></strong> IDR</p>
+                </div>
+
                 <p>Loan Rules:</p>
                 <dl>
                 <dt>Borrowing limit is around 1.000 idr to 100.000 idr.</dt>
@@ -47,6 +65,9 @@
                 <dt>Late fee is 500 idr per late day.</dt>
                 <dt>Due date is set on approval, usually: 3 days, 7 days, 14 days.</dt>
                 </dl>
+
+                <button type="submit" id="submitBtn">Submit request</button>
+                <p id="formMsg" role="status" aria-live="polite"></p>
             </form>
             
             </div>
@@ -65,5 +86,6 @@
   <p>© 2025 Xeversea — Grade 10 Showcase. Created by <a href="https://github.com/MuchLikeWhat">Jiho</a>, Maitreyawira Palembang School.</p>
   </div>
   </footer>
+<script src="/pinjol/new-loan.js" defer></script>
 </body>
 </html>
