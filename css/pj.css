@@ -45,6 +45,24 @@ body {
     padding: 10px;
 }
 
+.project a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #0b63ff;
+  border: 2px solid #0b63ff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project a:hover {
+  background: #0b63ff;
+  color: white;
+}
+
 /* Mobile Optimization */
 @media (max-width: 600px) {
     .project {

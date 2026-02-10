@@ -7,7 +7,7 @@
     <title>Xeversea | New Loan </title>
     <link rel="stylesheet" href="/css/all.css">
     <link rel="stylesheet" href="/css/pj.css">
-  <!-- <script src="js/all.js" defer></script> -->
+    
 </head>
 <body>
  <header>
@@ -33,45 +33,123 @@
     </nav>
   </header>
 <main>
-            <div class="loan-panel" style="background-color: beige; padding: 1rem;">
-            <h1 style="text-align: center;">New Loan to ######</h1>
-            <form id="request" novalidate>
-                <label for="amount">Enter loan amount (IDR)</label>
-                <input list="amount-suggestions" type="number" id="amount" name="amount" min="1000" max="100000" step="500" required inputmode="numeric" placeholder="e.g. 10000">
-                <datalist id="amount-suggestions">
-                  <option value="1000"><option value="5000"><option value="10000"><option value="25000"><option value="50000"><option value="100000">
-                </datalist>
+  <div class="loan-panel" role="region" aria-labelledby="loan-title">
+    <div class="loan-header">
+      <h1 id="loan-title">Loan Request</h1>
+      <div class="loan-meta">Fast review · Secure · Non-binding request</div>
+    </div>
 
-                <label for="term">Loan term</label>
-                <select id="term" name="term" required>
-                  <option value="">Select term</option>
-                  <option value="3">3 days</option>
-                  <option value="7">7 days</option>
-                  <option value="14">14 days</option>
-                </select>
+    <form id="request" novalidate>
+      <!-- Honeypot field for bots (should remain empty) -->
+      <div class="hp-hide" aria-hidden="true">
+        <label for="hp">Leave empty</label>
+        <input type="text" id="hp" name="hp" autocomplete="off" tabindex="-1">
+      </div>
 
-                <label for="reason">Reason for Loan</label>
-                <textarea id="reason" name="reason" required maxlength="200" placeholder="Short reason (max 200 chars)"></textarea>
+      <label for="email" class="full">Email <span style="color:#d32f2f">*</span></label>
+      <input type="email" id="email" name="email" required placeholder="your.email@example.com" class="full">
 
-                <div class="fees">
-                  <p>Fee: <strong><span id="fee">-</span></strong> IDR</p>
-                  <p>Total to repay: <strong><span id="total">-</span></strong> IDR</p>
-                </div>
+      <div class="verify-section full">
+        <div class="verify-row">
+          <input type="text" id="verify-code" name="verify-code" placeholder="Enter 6-digit code" maxlength="6" inputmode="numeric" disabled>
+          <button type="button" id="verifyBtn" onclick="sendVerificationCode()">Send code</button>
+        </div>
+        <div class="verify-status" id="verify-status"></div>
+      </div>
 
-                <p>Loan Rules:</p>
-                <dl>
-                <dt>Borrowing limit is around 1.000 idr to 100.000 idr.</dt>
-                <dt>Fee = 3% of loan, rounded to nearest 500 idr.</dt>
-                <dt>Late fee is 500 idr per late day.</dt>
-                <dt>Due date is set on approval, usually: 3 days, 7 days, 14 days.</dt>
-                </dl>
+      <div>
+        <label for="phone">Phone number (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="+62812345678" inputmode="tel">
+      </div>
 
-                <button type="submit" id="submitBtn">Submit request</button>
-                <p id="formMsg" role="status" aria-live="polite"></p>
-            </form>
-            
-            </div>
+      <div></div>
+
+      <label for="amount" class="full">Enter loan amount (IDR)</label>
+      <input list="amount-suggestions" type="number" id="amount" name="amount" min="1000" max="100000" step="500" required inputmode="numeric" placeholder="e.g. 10000" class="full">
+      <datalist id="amount-suggestions">
+        <option value="1000"><option value="5000"><option value="10000"><option value="25000"><option value="50000"><option value="100000">
+      </datalist>
+
+      <div>
+        <label for="term">Loan term</label>
+        <select id="term" name="term" required>
+          <option value="">Select term</option>
+          <option value="3">3 days</option>
+          <option value="7">7 days</option>
+          <option value="14">14 days</option>
+        </select>
+      </div>
+
+      <label for="reason" class="full">Reason for Loan</label>
+      <textarea id="reason" name="reason" required maxlength="200" placeholder="Short reason (max 200 chars)" class="full"></textarea>
+
+      <div class="fees full">
+        <p>Fee: <strong><span id="fee">-</span></strong> IDR</p>
+        <p>Total to repay: <strong><span id="total">-</span></strong> IDR</p>
+      </div>
+
+      <div class="legal full">
+        <strong>Loan rules & agreement</strong>
+        <ul>
+          <li>Borrowing limit: IDR 1,000 — IDR 100,000.</li>
+          <li>Fee = 3% of loan, rounded to the nearest 500 IDR. Late fee = 500 IDR/day.</li>
+          <li>Payment method is always cash pickup.</li>
+          <li>Submitting a request is not a binding contract. Final approval, amounts and due date are set by review.</li>
+          <li>By submitting you consent to processing this request and the data in accordance with our <a href="/term">terms</a> and <a href="/privacy">privacy policy</a>.</li>
+        </ul>
+      </div>
+
+      <div class="full agree">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree" class="small-note">I have read and agree to the loan rules and privacy policy.</label>
+      </div>
+
+      <div class="full actions">
+        <button type="submit" id="submitBtn">Submit request</button>
+        <div class="small-note">We will review and contact you. This demo mode does not create a binding loan.</div>
+      </div>
+
+      <p id="formMsg" class="full" role="status" aria-live="polite"></p>
+    </form>
+  </div>
 </main>
+
+<script>
+  // Send verification code to email (demo: stores in localStorage)
+  async function sendVerificationCode() {
+    const email = document.getElementById('email').value.trim();
+    const verifyBtn = document.getElementById('verifyBtn');
+    const verifyStatus = document.getElementById('verify-status');
+    const verifyCodeEl = document.getElementById('verify-code');
+
+    if (!email) {
+      verifyStatus.textContent = 'Enter email first';
+      verifyStatus.className = 'verify-status error';
+      return;
+    }
+
+    verifyBtn.disabled = true;
+    verifyBtn.textContent = 'Sending...';
+    verifyStatus.textContent = 'Sending code...';
+    verifyStatus.className = 'verify-status';
+
+    try {
+      const code = Math.floor(100000 + Math.random() * 900000).toString();
+      localStorage.setItem('verify_code', code);
+      localStorage.setItem('verify_email', email);
+      verifyStatus.textContent = 'Code sent to ' + email + ' (Demo: ' + code + ')';
+      verifyStatus.className = 'verify-status success';
+      verifyCodeEl.disabled = false;
+      verifyCodeEl.focus();
+    } catch (err) {
+      verifyStatus.textContent = 'Error sending code';
+      verifyStatus.className = 'verify-status error';
+    } finally {
+      verifyBtn.disabled = false;
+      verifyBtn.textContent = 'Send code';
+    }
+  }
+</script>
   <footer>
       <div class="container">      
       <h2>Contact & Social</h2>
