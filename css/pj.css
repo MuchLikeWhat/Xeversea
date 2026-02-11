@@ -12,22 +12,20 @@ body {
 }
 
 .projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .project {
     background-color: #fff;
     border-radius: 10px;
-    flex: 1 1 260px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow: hidden;
-    width: 300px;
-    flex-shrink: 0;
 }
 
 .project img {
@@ -70,9 +68,8 @@ body {
 }
 
 /* Mobile Optimization */
-@media (max-width: 600px) {
-    .project {
-        width: 90%;
-        flex: 1 1 100%;
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
     }
 }
