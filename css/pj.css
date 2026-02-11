@@ -47,20 +47,25 @@ body {
 
 .project a {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  color: #0b63ff;
-  border: 2px solid #0b63ff;
+  padding: 0.65rem 1.6rem;
+  background: #0e8991;
+  color: white;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  border: 1px solid #0e8991;
+  transition: all 0.2s ease;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .project a:hover {
-  background: #0b63ff;
-  color: white;
+  background: white;
+  color: #0e8991;
+  border-color: #0e8991;
 }
 
 /* Mobile Optimization */
