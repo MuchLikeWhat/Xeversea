@@ -1,0 +1,39 @@
+    .poems-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .poem-card {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      page-break-inside: avoid;
+    }
+    .poem-card h2 {
+      color: var(--blue-deep);
+      margin-bottom: 8px;
+      font-size: 1.6rem;
+    }
+    .poem-card .author {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .poem-card img {
+      width: 100%;
+      max-width: 400px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .poem-card .content {
+      white-space: pre-wrap;
+      color: #333;
+      line-height: 1.8;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+    }

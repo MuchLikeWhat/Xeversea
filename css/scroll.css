@@ -1,0 +1,33 @@
+.content {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+div.scroll-container {
+  background-color: #333;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  scrollbar-width: thin;
+
+}
+
+div.scroll-container img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  display: inline-block;
+  padding: 10px;
+}
+div.scroll-container img.Herboost{
+  height: 260px;
+}
+@media (max-width: 600px) {
+  .scroll-container img {
+    height: 220px;
+  }
+  .scroll-container img.Herboost {
+    height: 160px;
+  }
+}
