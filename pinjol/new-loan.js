@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
         });
         const data = await resp.json();
-        if (data && (data.success || data.result === 'success')) {
+        if (data && (data.success || data.code === 'SUCCESS')) {
           msg.textContent = 'Request submitted successfully ✅';
           form.reset();
           updateFees();
