@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
       verifyCodeEl.focus();
       return;
     }
-    if (emailEl.value.trim() !== storedEmail) {
+    /*if (emailEl.value.trim() !== storedEmail) {
       msg.textContent = 'Email does not match verification code.';
       emailEl.focus();
       return;
-    }
+    }*/
 
     if (agreeEl && !agreeEl.checked) {
       msg.textContent = 'You must agree to the loan rules before submitting.';
