@@ -1,6 +1,6 @@
 // Client-side validation, fee calc and optional submit to Google Apps Script endpoint
 // Configure SHEET_URL after you deploy your Apps Script web app
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzQfTHyEOlcYNbyQVGwmkLAWxd2ZOXADxYZMZAyqoiue2PHDp5zDebmCl9ZxTjZlhVZ/exec'; // set to your deployed Apps Script URL to enable submission
+const SHEET_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhykq_XvHMUlkrcSKEOHfKNOeNKVM9Nxl7MNnVnqZ5jTgi9fQMv1ZvZcSljHaLkVFJxk_r3TVNCK2ejHQ7vDEkT9BoshWR0yV_n40OOBb_mnO4KvJXII1N2BPeBx94TCND4RAb_SNRyK4yoMXo6OG95COWVDIq8npulVbf5FtXniZX5m-ngldaZkdhYw6n0JM6iCsiKprAvAPgtbEPyqK8cs4uNjlBrHv8eEP6Qrmkgkaa36Wvp3-IFJV8fUak4BKkfC0WsGd0IE-AWSgqh_w87ugxByg&lib=MgfG_vfSTLEDVGeMYvnZa-jZQApuWPuM8'; // set to your deployed Apps Script URL to enable submission
 const DEMO_MODE = !SHEET_URL;
 
 document.addEventListener('DOMContentLoaded', () => {
