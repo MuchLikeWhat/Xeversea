@@ -115,9 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         const resp = await fetch(SHEET_URL, {
           method: 'POST',
-          mode: 'cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: new URLSearchParams(payload)
         });
         const data = await resp.json();
         if (data && (data.success || data.result === 'success')) {
