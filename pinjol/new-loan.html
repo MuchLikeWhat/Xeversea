@@ -7,7 +7,14 @@
     <title>Xeversea | New Loan </title>
     <link rel="stylesheet" href="/css/all.css">
     <link rel="stylesheet" href="/css/pj.css">
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init({
+          publicKey: "qlvZy1IXp8XRdMp9",
+        });
+      })();
+    </script>
 </head>
 <body>
  <header>
@@ -135,12 +142,14 @@
 
     try {
       const code = Math.floor(100000 + Math.random() * 900000).toString();
-      localStorage.setItem('verify_code', code);
-      localStorage.setItem('verify_email', email);
-      verifyStatus.textContent = 'Code sent to ' + email + ' (Demo: ' + code + ')';
-      verifyStatus.className = 'verify-status success';
-      verifyCodeEl.disabled = false;
-      verifyCodeEl.focus();
+      emailjs.send("service_zsrixrb", "template_ofli2zb", { email, passcode: code }).then(() => {
+        localStorage.setItem('verify_code', code);
+        localStorage.setItem('verify_email', email);
+        verifyStatus.textContent = 'Code sent to ' + email;
+        verifyStatus.className = 'verify-status success';
+        verifyCodeEl.disabled = false;
+        verifyCodeEl.focus();
+      });
     } catch (err) {
       verifyStatus.textContent = 'Error sending code';
       verifyStatus.className = 'verify-status error';
