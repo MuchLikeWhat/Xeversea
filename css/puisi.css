@@ -1,39 +1,177 @@
-    .poems-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .poem-card {
-      background: white;
-      border-radius: 8px;
-      padding: 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      page-break-inside: avoid;
-    }
-    .poem-card h2 {
-      color: var(--blue-deep);
-      margin-bottom: 8px;
-      font-size: 1.6rem;
-    }
-    .poem-card .author {
-      color: #666;
-      font-style: italic;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-    }
-    .poem-card img {
-      width: 100%;
-      max-width: 400px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-    .poem-card .content {
-      white-space: pre-wrap;
-      color: #333;
-      line-height: 1.8;
-      font-family: 'Georgia', serif;
-      font-size: 1rem;
-    }
+/* Poetry Page Styling */
+.poems-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.poem-card {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.poem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.poem-card h2 {
+  color: var(--blue-deep);
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+}
+
+.poem-card .author {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.poem-card img {
+  width: 100%;
+  max-width: 300px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Read Poem Button */
+.read-btn {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  background: #0e8991;
+  color: white;
+  border: 1px solid #0e8991;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.read-btn:hover {
+  background: white;
+  color: #0e8991;
+  border-color: #0e8991;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--blue-deep);
+  padding-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: var(--blue-deep);
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.modal-header .author {
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.modal-body {
+  white-space: pre-wrap;
+  color: #333;
+  line-height: 1.8;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .poems-container {
+    padding: 15px;
+  }
+
+  .poem-card {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .modal-content {
+    padding: 25px;
+    margin: 20px;
+  }
+
+  .modal-body {
+    font-size: 0.95rem;
+  }
+}
