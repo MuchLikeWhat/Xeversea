@@ -1,0 +1,234 @@
+/* ===== Base Page ===== */
+
+body {
+    margin: 0;
+    background: #f8f9fa;
+    color: #202122;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height: 1.6;
+}
+
+/* Article container */
+
+.mw-content {
+    max-width: 980px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #a2a9b1;
+}
+
+/* ===== Headings ===== */
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+    color: #202122;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #a2a9b1;
+    margin-top: 2rem;
+    padding-bottom: 0.2rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+}
+
+/* ===== Links ===== */
+
+a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0b0080;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Paragraphs ===== */
+
+p {
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* ===== Lists ===== */
+
+ul, ol {
+    margin: 0.5rem 0 1rem 1.6rem;
+}
+
+/* ===== Tables ===== */
+
+table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+th, td {
+    border: 1px solid #a2a9b1;
+    padding: 0.4rem 0.6rem;
+}
+
+th {
+    background: #eaecf0;
+    text-align: left;
+}
+
+/* ===== Wikitable ===== */
+
+.wikitable {
+    background: #ffffff;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+}
+
+.wikitable th {
+    background: #eaecf0;
+}
+
+/* ===== Infobox ===== */
+
+.infobox {
+    float: right;
+    width: 260px;
+    margin: 0 0 1rem 1rem;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+.infobox th {
+    background: #eaecf0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.infobox td {
+    padding: 0.3rem 0.5rem;
+}
+
+.infobox img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.infobox-caption {
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.3rem;
+    color: #54595d;
+}
+
+/* ===== Thumbnails (Wikipedia-style images) ===== */
+
+.thumb {
+    float: right;
+    width: 220px;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 3px;
+    margin: 0.3rem 0 0.8rem 1rem;
+    font-size: 0.85rem;
+}
+
+.thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thumbcaption {
+    padding: 0.3rem;
+    color: #54595d;
+}
+
+/* ===== Table of Contents ===== */
+
+.toc {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 1rem;
+    width: 300px;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
+
+.toc h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    border: none;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc li {
+    margin: 0.2rem 0;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Navigation box ===== */
+
+.navbox {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* ===== References ===== */
+
+.references {
+    font-size: 0.9rem;
+}
+
+.references li {
+    margin-bottom: 0.3rem;
+}
+
+/* ===== Small text ===== */
+
+.small {
+    font-size: 0.85rem;
+    color: #54595d;
+}
+
+/* ===== Inline image ===== */
+
+.inline-img {
+    height: 1em;
+    vertical-align: middle;
+}
+
+/* ===== Clearfix ===== */
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
