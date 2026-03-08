@@ -39,7 +39,7 @@ header {
   color: #fff;
 }
 
-nav ul {
+header nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -50,7 +50,7 @@ nav ul {
 }
 
 @media screen and (max-width: 500px) {
-  nav a {
+header nav a {
     float: none;
     display: block;
     width: 100%;
@@ -58,14 +58,14 @@ nav ul {
   }
 }
 
-nav a {
+header nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s;
 }
 
-nav a:hover,
+header nav a:hover,
 nav a[aria-current="page"] {
   opacity: 0.75;
   text-decoration: underline;
@@ -103,6 +103,12 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
   margin-top: auto;
+}
+
+footer h2 {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 footer a {
