@@ -4,13 +4,13 @@ body {
     margin: 0;
     background: #f8f9fa;
     color: #202122;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height: 1.6;
 }
 
 /* Article container */
 
 .mw-content {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
@@ -20,74 +20,74 @@ body {
 
 /* ===== Headings ===== */
 
-h1, h2, h3, h4 {
+.mw-content h1, h2, h3, h4 {
     font-weight: 400;
     color: #202122;
 }
 
-h1 {
+.mw-content h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
-h2 {
+.mw-content h2 {
     font-size: 1.5rem;
     border-bottom: 1px solid #a2a9b1;
     margin-top: 2rem;
     padding-bottom: 0.2rem;
 }
 
-h3 {
+.mw-content h3 {
     font-size: 1.2rem;
     margin-top: 1.5rem;
 }
 
-h4 {
+.mw-content h4 {
     font-size: 1.05rem;
 }
 
 /* ===== Links ===== */
 
-a {
+.mw-content a {
     color: #0645ad;
     text-decoration: none;
 }
 
-a:visited {
+.mw-content a:visited {
     color: #0b0080;
 }
 
-a:hover {
+.mw-content a:hover {
     text-decoration: underline;
 }
 
 /* ===== Paragraphs ===== */
 
-p {
+.mw-content p {
     margin: 0.5rem 0 1rem 0;
 }
 
 /* ===== Lists ===== */
 
-ul, ol {
+.mw-content ul, ol {
     margin: 0.5rem 0 1rem 1.6rem;
 }
 
 /* ===== Tables ===== */
 
-table {
+.mw-content table {
     border-collapse: collapse;
     margin: 1rem 0;
     width: 100%;
     font-size: 0.95rem;
 }
 
-th, td {
+.mw-content th, td {
     border: 1px solid #a2a9b1;
     padding: 0.4rem 0.6rem;
 }
 
-th {
+.mw-content th {
     background: #eaecf0;
     text-align: left;
 }
