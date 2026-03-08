@@ -75,6 +75,10 @@ window.onCaptchaSuccess = function () {
     case 'hidupkeadilan65':
       window.location.replace('https://xeversea.sytes.net/pke.html');
       break;
+
+    case 'sijomokkeren':
+      window.location.replace('https://xeversea.sytes.net/ppe.html');
+      break;
       
     case 'yappology101':
       window.location.replace('https://devensmp.us.to/archive');
