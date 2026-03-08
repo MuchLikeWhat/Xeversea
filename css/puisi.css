@@ -1,15 +1,33 @@
 /* Poetry Page Styling */
+
+body {
+  background: #f4f6f8;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
 .poems-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.poems-container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  color: var(--blue-deep);
+  text-align: center;
 }
 
 .poem-card {
   background: white;
   border-radius: 8px;
   padding: 30px;
-  margin-bottom: 40px;
+  /* margin-bottom removed; grid gap handles spacing */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -40,6 +58,12 @@
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.poem-card img:hover {
+  transform: scale(1.02);
 }
 
 /* Read Poem Button */
@@ -159,6 +183,7 @@
 @media (max-width: 768px) {
   .poems-container {
     padding: 15px;
+    gap: 20px;
   }
 
   .poem-card {
