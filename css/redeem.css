@@ -1,10 +1,10 @@
 body {
-    background-image: url('assets/sea.jpg');
+    background-image: url('../assets/beach.jpg');
 }
 
 #container {
     position: absolute;
-    top: 50%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
