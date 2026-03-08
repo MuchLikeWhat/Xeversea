@@ -14,29 +14,6 @@ body{
     margin:0 auto;
 }
 
-/* top navigation bar */
-header nav{
-    background:#002147;
-    color:#fff;
-    padding:15px 0;
-}
-
-header nav .container ul{
-    list-style:none;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-header nav a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    padding:5px 0;
-}
-
 .hero-article{
     background:#fff;
     padding:20px;
@@ -89,26 +66,5 @@ header nav a{
 
 .sidebar a{
     color:#002147;
-    text-decoration:none;
-}
-
-footer{
-    background:#002147;
-    color:#fff;
-    padding:20px 0;
-}
-
-footer .container{
-    text-align:center;
-}
-
-footer dl{
-    text-align:left;
-    display:inline-block;
-    margin:0 0 10px;
-}
-
-footer a{
-    color:#fff;
     text-decoration:none;
 }
