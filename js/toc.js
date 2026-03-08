@@ -1,26 +1,27 @@
-const toc = document.getElementById("toc");
-const headers = document.querySelectorAll("h2");
+document.addEventListener("DOMContentLoaded", function () {
 
-let list = document.createElement("ul");
+const tocList = document.getElementById("toc-list");
+const headings = document.querySelectorAll(".mw-content h2");
 
-headers.forEach((header, index) => {
+let sectionNumber = 1;
 
-let id = "section-" + index;
-header.id = id;
+headings.forEach(function(heading){
 
-let item = document.createElement("li");
+const id = heading.textContent.toLowerCase().replace(/\s+/g, "-");
 
-let link = document.createElement("a");
+heading.id = id;
+
+const li = document.createElement("li");
+
+const link = document.createElement("a");
 link.href = "#" + id;
-link.textContent = header.textContent;
+link.textContent = sectionNumber + " " + heading.textContent;
 
-item.appendChild(link);
-list.appendChild(item);
+li.appendChild(link);
+tocList.appendChild(li);
+
+sectionNumber++;
 
 });
 
-let title = document.createElement("b");
-title.textContent = "Contents";
-
-toc.appendChild(title);
-toc.appendChild(list);  
+});
