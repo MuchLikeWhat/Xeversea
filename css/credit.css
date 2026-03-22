@@ -1,0 +1,120 @@
+/* ============================================================
+   credits.css — Xeversea Credits Pages
+   Requires all.css. Dark recolor of existing credits styles.
+   ============================================================ */
+
+/* ── CREDITS GRID ── */
+.credits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.credits > h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* ── CARD WRAPPER ── */
+.card-wrapper {
+  flex: 1 1 360px;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .card-wrapper {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ── CARD ── */
+.card {
+  background: #0c2535;
+  border: 1px solid rgba(141, 182, 188, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(234, 162, 124, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transform: translateY(-3px);
+}
+
+/* ── CREDITS TABLE ── */
+.credits-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0a1f2e;
+  border: 1px solid rgba(141, 182, 188, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.credits-table caption {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  background: #0c2535;
+  border-bottom: 1px solid rgba(141, 182, 188, 0.1);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.credits-table thead {
+  display: none;
+}
+
+.credits-table tbody tr {
+  border-bottom: 1px solid rgba(141, 182, 188, 0.07);
+}
+
+.credits-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.credits-table th,
+.credits-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.credits-table th {
+  width: 40%;
+  text-align: left;
+  font-weight: 500;
+  background: #0c2535;
+  color: var(--sealight);
+}
+
+.credits-table td {
+  color: rgba(232, 221, 208, 0.8);
+}
+
+.credits-table td a {
+  color: var(--sand);
+  text-decoration: none;
+}
+
+.credits-table td a:hover,
+.credits-table td a:focus {
+  color: var(--sandtrans);
+  text-decoration: underline;
+}

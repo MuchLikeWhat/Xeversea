@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+poem<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,24 +24,44 @@
   </header>
 
   <main>
-    <section id="img">
+    <div class="poem-banner">
       <img src="/assets/banner.webp" style="max-width:100%; height:auto;">
-    </section>
+    </div>
     
     <!-- Poem cards grid; images can include data-source="..." attribute for attribution
          if omitted the script will display the image URL by default. -->
-    <div class="poems-container">
-      <div class="poem-card">
-      <h1 style="text-align: left; color: var(--blue-deep); margin-bottom: 40px;">MENGENANG RIUH KITA, SETELAH LAHIRNYA SEKUMPULAN NYALA</h1>
-      <h2 style="text-align: left; color: #003b8e; margin-bottom: 20px;">X.EVERSEA</h2>
+    <div class="poem-hero">
+    <h1 class="poem-hero-title">Mengenang Riuh Kita, Setelah Lahirnya Sekumpulan Nyala</h1>
+    <div class="poem-hero-sub">Kumpulan Puisi Karya Kelas 10E</div>
+    <div class="poem-hero-divider"></div>
+  </div>
+
+  <div class="grid-wrapper">
+  <div class="masonry">
+      <div class="card card-special-title">
+        <div class="collection-label">X. Eversea · 2025–2026</div>
+        <div class="collection-title">Mengenang Riuh Kita, Setelah Lahirnya Sekumpulan Nyala</div>
+        <div class="collection-class">Kelas 10E · 34 Puisi</div>
       </div>
-      <div class="poem-card">
-        <h2>Tempat Kembali</h2>
-        <div class="author">oleh Alfharel Arkananta</div>
-        <img src="/assets/puisi/alfahrel.webp"
-             alt="Alfharel Arkananta"
-             data-source="Google">
-        <button class="read-btn" onclick="openModal('Tempat Kembali', 'oleh Alfharel Arkananta', 'Aku sadar sejauh apa langkah pergi\nkeluarga adalah tempat kembali\ndi setiap lelah yang menghampiri\nselalu ada rindu yang menanti\n\nHangat malam bukan karena api\ntapi hangat dari orang yang disayangi\ntatapan indah penuh kasih\ncinta keluarga yang tak pernah mati\n\nMerantau jauh mencari arah\ndemi hidup yang lebih indah\nisak tangis melepas langkah\ntatapan terakhir sebelum terpisah\n\nDi kota asing aku berjuang\nbanting tulang demi gemilang\nwaktu berlalu terus terkarang\nhingga pulang membawa terang\n\nMalam panjang kulewati sunyi\nllelah kusimpan dalam diri\nnamun wajah yang selalu di hati\nmenguatkan langkah untuk kembali')">Read Poem</button>
+      
+      <div class="card card-editor">
+        <div class="editor-label">✦ Disusun oleh</div>
+        <div class="editor-list">
+          <span class="editor-item">Raihan Abdi Fakhrian</span>
+          <span class="editor-item">Evelyn Angelita</span>
+          <span class="editor-item">Panni</span>
+          <span class="editor-item">Sheren Pratiwi Padmini</span>
+          <span class="editor-item">Jiho — web</span>
+        </div>
+        <div class="editor-note">Kumpulan puisi ini dikompilasi sebagai bagian dari proyek Bahasa Indonesia Kelas 10E · 2025–2026</div>
+      </div>
+
+      <div class="poem-card" onclick="openModal('Tempat Kembali','Alfharel Arkananta',`Aku sadar sejauh apa langkah pergi\nkeluarga adalah tempat kembali\ndi setiap lelah yang menghampiri\nselalu ada rindu yang menanti\n\nHangat malam bukan karena api\ntapi hangat dari orang yang disayangi\ntatapan indah penuh kasih\ncinta keluarga yang tak pernah mati\n\nMerantau jauh mencari arah\ndemi hidup yang lebih indah\nisak tangis melepas langkah\ntatapan terakhir sebelum terpisah\n\nDi kota asing aku berjuang\nbanting tulang demi gemilang\nwaktu berlalu terus terkarang\nhingga pulang membawa terang\n\nMalam panjang kulewati sunyi\nllelah kusimpan dalam diri\nnamun wajah yang selalu di hati\nmenguatkan langkah untuk kembali`)">
+        <img class="card-img" src="https://xeversea.sytes.net/assets/puisi/alfahrel.webp" alt="Tempat Kembali" loading="lazy"/>
+        <div class="poem-card-body">
+          <div class="poem-card-title">Tempat Kembali</div>
+          <div class="poem-card-author">— Alfharel Arkananta</div>
+        </div>
       </div>
 
       <div class="poem-card">

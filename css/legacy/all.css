@@ -1,0 +1,142 @@
+/* Basic Theme */
+:root {
+  --sand: #EAA27C;
+  --sandtrans: #E8BBA6;
+  --sealight: #8db6bc;
+  --seammid: #0e8991;
+  --seadark: #0c313a;
+  --blue-deep: #02347a;
+  --blue-soft: #e9f1ff;
+  --blue-darkest: #001d44;
+}
+
+body {
+  margin: 0;
+  color: #022652;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Navbar */
+header {
+  background: var(--blue-deep);
+  color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  gap: 10px 24px;
+}
+
+@media screen and (max-width: 500px) {
+header nav a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+header nav a:hover,
+nav a[aria-current="page"] {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* Credits Grid */
+.credits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  .credits {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--blue-soft);
+  border: 2px solid var(--blue-deep);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--seadark);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+footer h2 {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--sand);
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--sandtrans);
+  text-decoration: underline;
+}
+
+footer dl {
+  margin: 0;
+}
+
+footer dt {
+  font-weight: bold;
+}
+
+footer dd {
+  margin: 0 0 6px 0;
+}
+
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 12px;
+  color: #444;
+  margin: 15px 0;
+}

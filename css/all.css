@@ -1,22 +1,42 @@
-/* Basic Theme */
+/* ============================================================
+   all.css — Xeversea Site-Wide Styles
+   Dark theme. Applies to all pages.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap');
+
 :root {
-  --sand: #EAA27C;
-  --sandtrans: #E8BBA6;
-  --sealight: #8db6bc;
-  --seammid: #0e8991;
-  --seadark: #0c313a;
-  --blue-deep: #02347a;
-  --blue-soft: #e9f1ff;
+  --sand:         #EAA27C;
+  --sandtrans:    #E8BBA6;
+  --sealight:     #8db6bc;
+  --seamid:       #0e8991;
+  --seadark:      #0c313a;
+  --blue-deep:    #02347a;
+  --blue-soft:    #e9f1ff;
   --blue-darkest: #001d44;
+
+  --bg:           #011628;
+  --surface:      #0c2535;
+  --border:       rgba(141, 182, 188, 0.12);
+  --text:         #e8ddd0;
+  --text-muted:   rgba(141, 182, 188, 0.75);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  color: #022652;
-  background: #fff;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background-color: var(--bg);
+  color: var(--text);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.7;
 }
 
 main {
@@ -30,13 +50,42 @@ main {
 }
 
 .content {
-  padding: 20px;
+  padding: 2.5rem 20px;
+  text-align: center;
 }
 
-/* Navbar */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 1rem; }
+h2 { font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 0.75rem; }
+h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; color: var(--text-muted); }
+
+a {
+  color: var(--sand);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover { color: var(--sandtrans); text-decoration: underline; }
+
+blockquote {
+  border-left: 3px solid var(--seamid);
+  padding-left: 1rem;
+  color: var(--text-muted);
+  margin: 1.2rem 0;
+  font-style: italic;
+}
+
 header {
-  background: var(--blue-deep);
-  color: #fff;
+  background: var(--seadark);
+  border-bottom: 1px solid var(--border);
 }
 
 header nav ul {
@@ -44,99 +93,59 @@ header nav ul {
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  padding: 20px 0;
-  margin: 0;
-  gap: 10px 24px;
+  padding: 1rem 0;
+  gap: 8px 24px;
 }
 
-@media screen and (max-width: 500px) {
 header nav a {
-    float: none;
+  color: var(--sealight);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+header nav a:hover,
+header nav a[aria-current="page"] {
+  color: var(--sand);
+  text-decoration: none;
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+  header nav a {
     display: block;
     width: 100%;
     text-align: center;
   }
 }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s;
-}
-
-header nav a:hover,
-nav a[aria-current="page"] {
-  opacity: 0.75;
-  text-decoration: underline;
-}
-
-/* Credits Grid */
-.credits {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-@media (max-width: 700px) {
-  .credits {
-    grid-template-columns: 1fr;
-  }
-}
-
-.card {
-  background: var(--blue-soft);
-  border: 2px solid var(--blue-deep);
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer */
 footer {
   background-color: var(--seadark);
-  color: white;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
   text-align: center;
   padding: 2rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   margin-top: auto;
 }
 
 footer h2 {
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: var(--text);
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
 }
 
 footer a {
   color: var(--sand);
-  transition: 0.5s;
+  transition: color 0.3s;
   text-decoration: none;
 }
 
-footer a:hover {
-  color: var(--sandtrans);
-  text-decoration: underline;
-}
+footer a:hover { color: var(--sandtrans); text-decoration: underline; }
 
-footer dl {
-  margin: 0;
-}
-
-footer dt {
-  font-weight: bold;
-}
-
-footer dd {
-  margin: 0 0 6px 0;
-}
-
-blockquote {
-  border-left: 4px solid #ccc;
-  padding-left: 12px;
-  color: #444;
-  margin: 15px 0;
-}
+footer dl { margin: 0; }
+footer dt { font-weight: 500; color: var(--text); }
+footer dd { margin: 0 0 6px 0; }
