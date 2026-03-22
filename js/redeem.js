@@ -84,6 +84,10 @@ window.onCaptchaSuccess = function () {
       window.location.replace('https://devensmp.us.to/archive');
       break;
 
+    case 'nakpinjol1':
+      window.location.replace('https://xeversea.sytes.net/pinjol');
+      break;
+
     default:
       console.warn('Unknown pending code after captcha:', pendingCode);
       break;
