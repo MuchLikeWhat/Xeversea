@@ -5,7 +5,6 @@
   --text-primary:      #e8ddd0;
 }
 
-/* ── NOISE OVERLAY ── */
 body::before {
   content: '';
   position: fixed;
@@ -16,7 +15,6 @@ body::before {
   opacity: 0.6;
 }
 
-/* ── BANNER ── */
 .poem-banner {
   position: relative;
   width: 100%;
@@ -31,6 +29,7 @@ body::before {
   object-fit: cover;
   object-position: center;
   display: block;
+  max-width: 100% !important;
 }
 
 .poem-banner::after {
@@ -40,7 +39,6 @@ body::before {
   background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%);
 }
 
-/* ── HERO ── */
 .poem-hero {
   position: relative;
   z-index: 1;
@@ -86,14 +84,13 @@ body::before {
   opacity: 0.7;
 }
 
-.poem-divider {
+.poem-hero-divider {
   width: 60px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--seamid), transparent);
   margin: 1.2rem auto 0;
 }
 
-/* ── GRID WRAPPER ── */
 .poem-grid-wrapper {
   position: relative;
   z-index: 1;
@@ -103,7 +100,6 @@ body::before {
   width: 100%;
 }
 
-/* ── MASONRY ── */
 .masonry {
   columns: 3;
   column-gap: 1rem;
@@ -112,7 +108,6 @@ body::before {
 @media (max-width: 768px) { .masonry { columns: 2; } }
 @media (max-width: 480px) { .masonry { columns: 1; } }
 
-/* ── POEM CARD ── */
 .poem-card {
   break-inside: avoid;
   margin-bottom: 1rem;
@@ -161,21 +156,19 @@ body::before {
   opacity: 0.85;
 }
 
-/* ── SPECIAL: TITLE CARD ── */
-.poem-card-special {
+.card.poem-card-special {
   background: linear-gradient(135deg, var(--seadark) 0%, #0a2030 100%);
   border-color: rgba(14, 137, 145, 0.3);
   cursor: default;
   padding: 1.5rem 1.2rem;
   break-inside: avoid;
   margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(14, 137, 145, 0.3);
 }
 
-.poem-card-special:hover {
+.card.poem-card-special:hover {
   transform: none;
   box-shadow: none;
+  border-color: rgba(14, 137, 145, 0.3);
 }
 
 .poem-collection-label {
@@ -202,21 +195,19 @@ body::before {
   color: var(--sand);
 }
 
-/* ── SPECIAL: EDITOR CARD ── */
-.poem-card-editor {
+.card.poem-card-editor {
   background: linear-gradient(135deg, #0a1f2e 0%, var(--blue-darkest) 100%);
   border-color: rgba(234, 162, 124, 0.2);
   cursor: default;
   padding: 1.2rem;
   break-inside: avoid;
   margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(234, 162, 124, 0.2);
 }
 
-.poem-card-editor:hover {
+.card.poem-card-editor:hover {
   transform: none;
   box-shadow: none;
+  border-color: rgba(234, 162, 124, 0.2);
 }
 
 .poem-editor-label {
@@ -261,7 +252,6 @@ body::before {
 .poem-card:nth-child(9)  { animation-delay: 0.45s; }
 .poem-card:nth-child(10) { animation-delay: 0.50s; }
 
-/* ── MODAL ── */
 .poem-modal-overlay {
   display: none;
   position: fixed;
