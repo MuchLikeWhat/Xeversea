@@ -1,3 +1,11 @@
+/* ============================================================
+   puisi.css — Xeversea Puisi Page
+   Requires all.css.
+   Supports both old card structure (h2 + .author + read-btn)
+   and new card structure (poem-card-body + poem-card-title etc.)
+   ============================================================ */
+
+/* ── PAGE TOKENS ── */
 :root {
   --card-bg:           #0c2535;
   --card-border:       rgba(141, 182, 188, 0.12);
@@ -5,6 +13,7 @@
   --text-primary:      #e8ddd0;
 }
 
+/* ── NOISE OVERLAY ── */
 body::before {
   content: '';
   position: fixed;
@@ -15,6 +24,7 @@ body::before {
   opacity: 0.6;
 }
 
+/* ── BANNER ── */
 .poem-banner {
   position: relative;
   width: 100%;
@@ -39,6 +49,7 @@ body::before {
   background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%);
 }
 
+/* ── HERO ── */
 .poem-hero {
   position: relative;
   z-index: 1;
@@ -91,6 +102,7 @@ body::before {
   margin: 1.2rem auto 0;
 }
 
+/* ── GRID WRAPPER ── */
 .poem-grid-wrapper {
   position: relative;
   z-index: 1;
@@ -100,6 +112,7 @@ body::before {
   width: 100%;
 }
 
+/* ── MASONRY ── */
 .masonry {
   columns: 3;
   column-gap: 1rem;
@@ -108,6 +121,9 @@ body::before {
 @media (max-width: 768px) { .masonry { columns: 2; } }
 @media (max-width: 480px) { .masonry { columns: 1; } }
 
+/* ══════════════════════════════════════════
+   POEM CARD — works for BOTH structures
+   ══════════════════════════════════════════ */
 .poem-card {
   break-inside: avoid;
   margin-bottom: 1rem;
@@ -118,6 +134,7 @@ body::before {
   cursor: pointer;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   animation: fadeUp 0.6s ease-out both;
+  text-align: left;
 }
 
 .poem-card:hover {
@@ -126,13 +143,23 @@ body::before {
   box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(234,162,124,0.1);
 }
 
+/* ── Image (both structures) ── */
+.poem-card img,
 .poem-card-img {
   width: 100%;
   display: block;
   object-fit: cover;
   max-height: 220px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
 }
 
+.poem-card img:hover,
+.poem-card-img:hover {
+  transform: scale(1.02);
+}
+
+/* ── NEW structure: poem-card-body ── */
 .poem-card-body {
   padding: 0.85rem 1rem 1rem;
 }
@@ -156,6 +183,35 @@ body::before {
   opacity: 0.85;
 }
 
+/* ── OLD structure: h2 + .author + read-btn ── */
+.poem-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0.85rem 1rem 0.3rem;
+  border: none;
+  padding: 0;
+}
+
+.poem-card .author {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand);
+  opacity: 0.85;
+  margin: 0 1rem 0.85rem;
+}
+
+/* hide read-btn visually — card itself is clickable */
+.poem-card .read-btn {
+  display: none;
+}
+
+/* ── SPECIAL: TITLE CARD ── */
 .card.poem-card-special {
   background: linear-gradient(135deg, var(--seadark) 0%, #0a2030 100%);
   border-color: rgba(14, 137, 145, 0.3);
@@ -163,6 +219,8 @@ body::before {
   padding: 1.5rem 1.2rem;
   break-inside: avoid;
   margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(14, 137, 145, 0.3);
 }
 
 .card.poem-card-special:hover {
@@ -195,6 +253,7 @@ body::before {
   color: var(--sand);
 }
 
+/* ── SPECIAL: EDITOR CARD ── */
 .card.poem-card-editor {
   background: linear-gradient(135deg, #0a1f2e 0%, var(--blue-darkest) 100%);
   border-color: rgba(234, 162, 124, 0.2);
@@ -202,6 +261,8 @@ body::before {
   padding: 1.2rem;
   break-inside: avoid;
   margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(234, 162, 124, 0.2);
 }
 
 .card.poem-card-editor:hover {
@@ -252,7 +313,10 @@ body::before {
 .poem-card:nth-child(9)  { animation-delay: 0.45s; }
 .poem-card:nth-child(10) { animation-delay: 0.50s; }
 
-.poem-modal-overlay {
+/* ══════════════════════════════════════════
+   POEM MODAL
+   ══════════════════════════════════════════ */
+#poemModal {
   display: none;
   position: fixed;
   inset: 0;
@@ -264,19 +328,18 @@ body::before {
   padding: 1.5rem;
 }
 
-.poem-modal-overlay.open {
+#poemModal.show {
   display: flex;
 }
 
-.poem-modal {
+.poem-modal-inner {
   background: var(--card-bg);
   border: 1px solid rgba(141, 182, 188, 0.2);
   border-radius: 14px;
-  max-width: 560px;
+  max-width: 520px;
   width: 100%;
-  max-height: 85vh;
+  max-height: 88vh;
   overflow-y: auto;
-  padding: 2rem;
   position: relative;
   animation: modalIn 0.25s ease-out both;
 }
@@ -286,31 +349,28 @@ body::before {
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.poem-modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: var(--sealight);
-  font-size: 1.3rem;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-  line-height: 1;
+/* modal image at top */
+.poem-modal-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px 14px 0 0;
 }
 
-.poem-modal-close:hover { opacity: 1; }
+.poem-modal-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
 
-.poem-modal-title {
+#modalTitle {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 1.4rem;
   color: var(--text-primary);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
-.poem-modal-author {
+#modalAuthor {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -324,10 +384,109 @@ body::before {
   margin-bottom: 1.4rem;
 }
 
-.poem-modal-content {
+#modalBody {
   font-family: 'Playfair Display', serif;
   font-size: 0.95rem;
   line-height: 1.9;
   color: rgba(232, 221, 208, 0.85);
   white-space: pre-line;
 }
+
+/* close + tutup buttons */
+.poem-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.poem-modal-close:hover { opacity: 1; }
+
+.poem-modal-tutup {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background: var(--seamid);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.poem-modal-tutup:hover { background: var(--seadark); }
+
+/* ══════════════════════════════════════════
+   IMAGE LIGHTBOX MODAL
+   ══════════════════════════════════════════ */
+#imageModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(4px);
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+#imageModal.show {
+  display: flex;
+}
+
+#modalImage {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: modalIn 0.2s ease-out both;
+}
+
+#modalImageSource {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.image-modal-close:hover { background: rgba(255,255,255,0.2); }

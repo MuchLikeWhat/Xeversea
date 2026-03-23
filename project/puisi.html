@@ -336,65 +336,72 @@
     </div>
   </footer>
   <script>
-    function openModal(title, author, content) {
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalAuthor').textContent = author;
-      document.getElementById('modalBody').textContent = content;
-      document.getElementById('poemModal').classList.add('show');
-      document.body.style.overflow = 'hidden';
+    // ── POEM MODAL ──
+function openModal(title, author, content, imgSrc) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalAuthor').textContent = author;
+  document.getElementById('modalBody').textContent = content;
+  
+  // set modal image if provided
+  const modalImg = document.getElementById('poemModalImg');
+  if (modalImg) {
+    if (imgSrc) {
+      modalImg.src = imgSrc;
+      modalImg.style.display = 'block';
+    } else {
+      modalImg.style.display = 'none';
     }
-    function closeModal() {
-      document.getElementById('poemModal').classList.remove('show');
-      document.body.style.overflow = 'auto';
-    }
-    document.getElementById('poemModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        // close whichever modal is open
-        closeModal();
-        closeImageModal();
-      }
-    });
+  }
 
-    // make images clickable and set default data-source
-    document.querySelectorAll('.poem-card img').forEach(img => {
-      if (!img.dataset.source) {
-        img.dataset.source = img.src; // default to file path if no source provided
-      }
-      img.addEventListener('click', function() {
-        openImageModal(this.src, this.dataset.source, this.alt);
-      });
-    });
+  document.getElementById('poemModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
 
-    function openImageModal(src, sourceText, altText) {
-      const modal = document.getElementById('imageModal');
-      document.getElementById('modalImage').src = src;
-      document.getElementById('modalImage').alt = altText || '';
-      document.getElementById('modalImageSource').textContent = sourceText ? 'Source: ' + sourceText : '';
-      // optionally show alt text below source if provided
-      if (altText) {
-        document.getElementById('modalImageSource').textContent += ' (' + altText + ')';
-      }
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
+function closeModal() {
+  document.getElementById('poemModal').classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
 
-    function closeImageModal() {
-      const modal = document.getElementById('imageModal');
-      modal.classList.remove('show');
-      document.body.style.overflow = 'auto';
-    }
+document.getElementById('poemModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
 
-    // allow closing image modal by clicking outside or pressing escape
-    document.getElementById('imageModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeImageModal();
-      }
-    });
+// ── IMAGE LIGHTBOX ──
+function openImageModal(src, sourceText, altText) {
+  document.getElementById('modalImage').src = src;
+  document.getElementById('modalImage').alt = altText || '';
+  document.getElementById('modalImageSource').textContent = sourceText ? 'Sumber: ' + sourceText : '';
+  document.getElementById('imageModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+
+document.getElementById('imageModal').addEventListener('click', function(e) {
+  if (e.target === this) closeImageModal();
+});
+
+// ── IMAGE CLICK ON CARDS ──
+document.querySelectorAll('.poem-card img').forEach(img => {
+  if (!img.dataset.source) {
+    img.dataset.source = '';
+  }
+  img.addEventListener('click', function(e) {
+    e.stopPropagation(); // prevent card click from firing too
+    openImageModal(this.src, this.dataset.source, this.alt);
+  });
+});
+
+// ── ESC KEY ──
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeImageModal();
+  }
+});
   </script>
 </body>
 </html>
