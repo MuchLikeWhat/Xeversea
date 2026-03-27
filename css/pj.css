@@ -3,13 +3,6 @@ body {
     padding: 0;
 }
 
-.header {
-    background-color: #888;
-    color: white;
-    text-align: center;
-    padding: 60px;
-}
-
 .projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -20,7 +13,7 @@ body {
 }
 
 .project {
-    background-color: #fff;
+    background-color: #0c2535;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -34,7 +27,7 @@ body {
 }
 
 .name {
-    background-color: #eee;
+    background-color: #081924;
     padding: 10px;
     font-weight: bold;
 }
