@@ -38,6 +38,7 @@ body {
 }
 
 .mw-content h3 {
+    text-align: center;
     font-size: 1.2rem;
     margin-top: 1.5rem;
 }
