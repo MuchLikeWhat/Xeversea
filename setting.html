@@ -5,6 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Xeversea | Settings</title>
   <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/setting.css">
+  <style>
+   body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .container h1 {
+      margin-bottom: 20px;
+    }
+    .container section {
+      margin-bottom: 30px;
+    }
+    .container label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .container select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .container button {
+      padding: 10px 20px;
+      background-color: #0e8991;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .container button:hover {
+      background-color: #075055;
+    }
+    .container a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0e8991;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,7 +72,29 @@
     </nav>
   </header>
 <main>
+<div class="container">
+  <h1>Settings</h1>
+  <p>Here you can customize your experience on Xeversea. Please note that these settings are saved locally on your device and will not be shared with anyone.</p>
 
+  <section>
+    <a href="redeem" class="button">Redeem Your Code</a>
+  </section>
+
+  <section>
+    <a href="credit" class="button">View Credits</a>
+  </section>
+
+  <section>
+    <h2>Language</h2>
+    <label for="language-select">Select your preferred language:</label>
+    <select id="language-select">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+    </select>
+  </section>
+
+  <button id="save-settings">Save Settings</button>
 </main>
 
   <footer>
@@ -40,5 +112,20 @@
       </p>
     </div>
   </footer>
+  <script>
+    // Load settings from localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const languageSelect = document.getElementById('language-select');
+
+      // Load saved settings
+      languageSelect.value = localStorage.getItem('language') || 'en';
+
+      // Save settings on button click
+      document.getElementById('save-settings').addEventListener('click', () => {
+        localStorage.setItem('language', languageSelect.value);
+        alert('Settings saved!');
+      });
+    });
+  </script>
 </body>
 </html>
