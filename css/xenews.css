@@ -1,5 +1,3 @@
-/* xnews.css - basic styles inspired by Indonesian news portals */
-
 body{
     margin:0;
     font-family: Arial, sans-serif;
@@ -12,6 +10,29 @@ body{
     width:90%;
     max-width:1200px;
     margin:0 auto;
+}
+
+.container h1{
+    text-align:center;
+    margin-top:20px;
+    color:#002147;
+}
+
+.container h2{
+    color:#002147;
+    margin-top:20px;
+}
+
+.container p{
+    color:#555;
+}
+
+.container blockquote{
+    border-left:4px solid #002147;
+    padding-left:15px;
+    margin-left:0;
+    color:#555;
+    font-style:italic;
 }
 
 .hero-article{
