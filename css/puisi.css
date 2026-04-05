@@ -17,6 +17,10 @@ body::before {
   opacity: 0.6;
 }
 
+header {
+  z-index: 2;
+}
+
 /* ── BANNER ── */
 .poem-banner {
   position: relative;
