@@ -23,6 +23,16 @@ body{
     margin-top:20px;
 }
 
+.container h3{
+    color:#002147;
+    margin-top:15px;
+}
+
+.container h4{
+    color:#002147;
+    margin-top:10px;
+}
+
 .container p{
     color:#555;
 }
